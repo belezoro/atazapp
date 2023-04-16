@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{./oinarria :: head}">
+
+</head>
+<body>
+	<header th:replace="~{./oinarria :: header}"> </header>
+
+	<div class="container mt-5">
+		<h1>Atazen Egoera</h1>
+		<div class="row">
+			<div class="col-sm">
+				<div class="card">
+					<div class="card-header bg-primary text-white">Egiteke</div>
+					<ul class="list-group list-group-flush" id="egoera-egiteke">
+						<li th:each="ataza : ${atazaEgiteke}" th:text="${ataza.izena}" id="${ataza.id}" class="list-group-item" draggable="true"></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-sm">
+				<div class="card" >
+					<div class="card-header bg-success text-white">Garapenean</div>
+					<ul class="list-group list-group-flush" id="egoera-garapenean">
+						<li th:each="ataza : ${atazaGarapenean}" th:text="${ataza.izena}" id="${ataza.id}" class="list-group-item" draggable="true"></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-sm">
+				<div class="card">
+					<div class="card-header bg-warning text-white">Zuzentzeko</div>
+					<ul class="list-group list-group-flush" id="egoera-zuzentzeko">
+						<li th:each="ataza : ${atazaZuzentzeko}" th:text="${ataza.izena}" id="${ataza.id}" class="list-group-item" draggable="true"></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-sm">
+				<div class="card">
+					<div class="card-header bg-danger text-white">Amaituta</div>
+					<ul class="list-group list-group-flush" id="egoera-amaituta">
+						<li th:each="ataza : ${atazaAmaituak}" th:text="${ataza.izena}" id="${ataza.id}" class="list-group-item" draggable="true"></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer th:replace="~{./oinarria :: footer}"></footer>
+	<script type="text/javascript" src="/javascript/bistak/kanban.js" ></script>
+</body>
+</html>

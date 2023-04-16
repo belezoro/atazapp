@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{oinarria :: head}">
+
+</head>
+<body>
+	<header th:replace="~{oinarria :: header}">
+		
+	</header>
+
+	<div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title text-center mb-4">Saioa hasi</h3>
+                        <form action="/hasiSaioa" method="POST">
+                            <div class="mb-3">
+                                <label for="izena" class="form-label">Erabiltzailea</label>
+                                <input type="text" class="form-control" id="izena" name="izena" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="pasahitza" class="form-label">Pasahitza</label>
+                                <input type="password" class="form-control" id="pasahitza" name="pasahitza" required>
+                            </div>
+                            <div class="d-grid">
+                                <button class="btn btn-primary" type="submit">Sartu</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<footer th:replace="~{oinarria :: footer}"></footer>
+</body>
+</html>
